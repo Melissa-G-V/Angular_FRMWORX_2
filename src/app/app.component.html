@@ -227,6 +227,11 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <ul>
+        <li class="text" *ngFor="let item of items$ | async">
+          <img [src]="item.url" alt="Girl in a jacket" width="200" height="200">
+        </li>
+      </ul>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

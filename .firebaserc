@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fudencioland": {
+      "hosting": {
+        "my-app": [
+          "fudencioland"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fudencioland"
+  }
+}
