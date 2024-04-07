@@ -1,6 +1,6 @@
 {
   "hosting": {
-      "public": "dist",
+      "public": "dist/nasa/browser",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -9,7 +9,7 @@
       "rewrites": [
         {
           "source": "**",
-          "destination": "nasa/index.html"
+          "destination": "/index.html"
         }
       ]
   }
