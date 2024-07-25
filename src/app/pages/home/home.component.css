@@ -20,9 +20,12 @@ main {
 
 } */
 
-/* mat-card{
+mat-card{
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-} */
+    margin-top: 20px;
+}
 
 button {
     width: 50%;

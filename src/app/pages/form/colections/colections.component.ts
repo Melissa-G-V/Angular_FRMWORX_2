@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirestoreService } from '../../../service/firestore.service';
@@ -9,7 +9,6 @@ import { FirestoreService } from '../../../service/firestore.service';
   styleUrl: './colections.component.css'
 })
 export class ColectionsComponent {
-  // items: Observable<any[]>;
   form!: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -25,13 +24,22 @@ export class ColectionsComponent {
       portable: ['',[Validators.required]],
     })
   }
+
+
   enviar(): void {
     if (this.form.valid) {
       const data = this.form.value;
-      this.firestoreService.saveFormData('colections', data).then(() => {
-        console.log('Data saved successfully');
+      let promise: Promise<void>;
+      if (data.id) { 
+        promise = this.firestoreService.updateFormData('colections', data.id, data);
+      } else {
+        promise = this.firestoreService.saveFormData('colections', data);
+      }
+      promise.then(() => {
+        console.log('SALVO');
+
       }).catch((error) => {
-        console.error('Error saving data:', error);
+        console.error('ERRO:', error);
       });
     }
   }}

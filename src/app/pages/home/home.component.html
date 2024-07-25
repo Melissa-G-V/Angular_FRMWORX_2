@@ -1,16 +1,38 @@
 <main>
-<app-colections></app-colections>
+    <app-colections></app-colections>
+    <!-- <input [(ngModel)]="searchTerm" placeholder="Search..." /> -->
+    <div *ngFor="let item of items$ | async">
+        <mat-card>
+            <h3>{{ item.data.colection_nome }}</h3>
+            <h4>{{ item.data.console }}</h4>
+            <p>{{item.data.portable}}</p>
+            <p>{{item.data.logo}}</p>
+            <button (click)="click_me(item)">Editar</button>
+            <button mat-button color="warn" (click)="deleteItem(item.id)">
+                Deletar
+            </button>
 
+            <div *ngIf="Editing && Myitem">
+                <form [formGroup]="formb" (ngSubmit)="updateItem()">
+                    <mat-form-field>
+                        <mat-label>Nome Coletania:</mat-label>
+                        <input type='text' matInput placeholder="Input" formControlName="colection_nome">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Console:</mat-label>
+                        <input type='text' matInput placeholder="Input" formControlName="console">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Logo:</mat-label>
+                        <input type='text' matInput placeholder="Input" formControlName="logo">
+                    </mat-form-field>
 
-
-<div *ngFor="let item of items | async">
-    <mat-card>
-        <img mat-card-image width="150" height="60" src="" alt="logo">
-        <h3>{{ item.colection_nome }}</h3>
-        <h4>{{ item.console }}</h4>
-        <p>{{item.portable}}</p>
-    </mat-card>
-</div>
-
-
+                    <mat-radio-group aria-label="O console é portatil?" formControlName="portable">
+                        <mat-radio-button value="true">Console portátil</mat-radio-button>
+                    </mat-radio-group>
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
+        </mat-card>
+    </div>
 </main>
