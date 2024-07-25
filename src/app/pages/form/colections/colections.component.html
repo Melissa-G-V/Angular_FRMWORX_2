@@ -1,0 +1,29 @@
+
+<!-- [formGroup]="form" -->
+<div class="container">
+<mat-card width="150">
+    <form [formGroup]="form"> 
+        <h4>Cadastre uma coleção</h4>
+        <mat-form-field>
+            <mat-label>Nome da coleção:</mat-label>
+            <input type='nome' matInput placeholder="Input" formControlName="colection_nome">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Console:</mat-label>
+            <input type='nome' matInput placeholder="Input" formControlName="console">
+        </mat-form-field>
+
+        <mat-form-field>
+        <mat-label>Email:</mat-label>
+            <input type='nome' matInput placeholder="Input" formControlName="logo">
+        </mat-form-field>
+                    
+        <mat-radio-group aria-label="O console é portatil?" formControlName="portable">
+                <mat-radio-button value="true" >Console portatil</mat-radio-button>
+        </mat-radio-group>
+
+            <button mat-raised-button color="accent" (click)="enviar()">Cadastre Coleção</button>
+    </form>
+    </mat-card>
+</div>

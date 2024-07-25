@@ -1,0 +1,26 @@
+<main>
+    <img mat-card-image width="150" height="60" src="../assets/arcadia.png" alt="Photo of a Shiba Inu">
+
+    <mat-card>
+<form [formGroup]="form">
+    <h4>Arcadia Login</h4>
+        <mat-form-field>
+            <mat-label>Email:</mat-label>
+            <input type='email' matInput placeholder="Input" formControlName="email">
+            <mat-error *ngIf="form.get('email')!.hasError('required')">
+                Pre-encha o email
+            </mat-error>
+            <mat-error *ngIf="form.get('email')!.hasError('email')">
+                email invalido 
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>senha</mat-label>
+            <input type='password' matInput placeholder="Input" formControlName="password">
+        </mat-form-field>
+
+            <button mat-raised-button color="primary" (click)="login()">Login</button>
+        <button mat-raised-button color="accent">Cadastrar</button>
+</form>
+</mat-card>
+</main>

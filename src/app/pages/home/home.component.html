@@ -1,0 +1,16 @@
+<main>
+<app-colections></app-colections>
+
+
+
+<div *ngFor="let item of items | async">
+    <mat-card>
+        <img mat-card-image width="150" height="60" src="" alt="logo">
+        <h3>{{ item.colection_nome }}</h3>
+        <h4>{{ item.console }}</h4>
+        <p>{{item.portable}}</p>
+    </mat-card>
+</div>
+
+
+</main>

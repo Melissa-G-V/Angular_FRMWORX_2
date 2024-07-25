@@ -1,0 +1,32 @@
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+} */
+
+main {
+   
+    /* height: 100vh; */
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+/* form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+} */
+
+/* mat-card{
+    flex-direction: column;
+} */
+
+button {
+    width: 50%;
+    margin-bottom: 10px;
+
+}
+

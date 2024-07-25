@@ -1,0 +1,22 @@
+form {
+    display: flex;
+
+    flex-direction: column;
+
+}
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+mat-card{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 10px;
+}
+
+button {
+    width: 100%;
+}

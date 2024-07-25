@@ -24,6 +24,6 @@ export class AppComponent {
   items$: Observable<any[]>;
 
   constructor(private firestore: AngularFirestore) {
-    this.items$ = this.firestore.collection('nasa_pics').valueChanges();
+    this.items$ = this.firestore.collection('games').valueChanges();
   }
 }
