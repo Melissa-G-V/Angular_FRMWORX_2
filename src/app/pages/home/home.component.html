@@ -3,12 +3,13 @@
     <!-- <input [(ngModel)]="searchTerm" placeholder="Search..." /> -->
     <div *ngFor="let item of items$ | async">
         <mat-card>
+            <p>{{ item.data.stars | star}}</p>
             <p>{{ 'Hello World' | star }}</p>
 
             <h3>{{ item.data.colection_nome }}</h3>
             <h4>{{ item.data.console }}</h4>
             <p>{{item.data.portable}}</p>
-            <p>{{item.data.logo}}</p>
+            <p>{{item.data.logo | star}}</p>
             <button (click)="click_me(item)">Editar</button>
             <button mat-button color="warn" (click)="deleteItem(item.id)">
                 Deletar
