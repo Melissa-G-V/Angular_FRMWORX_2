@@ -13,7 +13,7 @@ import { environment } from '../../../environments/environment';
 import { ColectionsComponent } from '../form/colections/colections.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { StarPipe } from '../../star.pipe.spec';
 const routes: Routes= [
   {
     path:'',
@@ -25,8 +25,8 @@ const routes: Routes= [
 @NgModule({
   declarations: [
     HomeComponent,
-    ColectionsComponent
-
+    ColectionsComponent,
+    StarPipe
   ],
   imports: [
     CommonModule,
@@ -40,6 +40,9 @@ const routes: Routes= [
     ReactiveFormsModule,
     MatDatepickerModule,
     MatRadioModule,
+  ],
+  exports: [
+    StarPipe 
   ]
 })
 export class HomeModule { }
